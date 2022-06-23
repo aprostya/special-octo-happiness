@@ -2,11 +2,7 @@ import Head from 'next/head'
 import {
   Container,
   Main,
-  Title,
-  Description,
-  CodeTag,
 } from '../components/styles_common/sharedstyles'
-import Cards from '../components/cards'
 import {Header} from '../components/header/index';
 
 export default function Home() {
