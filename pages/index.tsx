@@ -5,8 +5,9 @@ import {
   Title,
   Description,
   CodeTag,
-} from '../components/sharedstyles'
+} from '../components/styles_common/sharedstyles'
 import Cards from '../components/cards'
+import {Header} from '../components/header/index';
 
 export default function Home() {
   return (
@@ -17,16 +18,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Main>
-        <Title>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </Title>
-
-        <Description>
-          Get started by editing
-          <CodeTag>pages/index.tsx</CodeTag>
-        </Description>
-
-        <Cards />
+        <Header/>
       </Main>
     </Container>
   )
