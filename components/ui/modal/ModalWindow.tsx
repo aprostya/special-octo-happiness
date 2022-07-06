@@ -7,9 +7,20 @@ import {
   ModalImg,
   ModalImgContainer,
   CloseModalButton,
+  ModalContentWrapper,
+  ModalTitle
 } from "./styles";
 
-export const Modal = ({showModal, setShowModal}) => {
+interface IModalProps {
+  showModal: boolean,
+  title: string,
+  setShowModal: any;
+  content: any;
+}
+
+export const Modal = (props: IModalProps) => {
+  const {showModal, setShowModal, content, title} = props;
+
   const modalRef = useRef();
 
   const animation = useSpring({
@@ -20,8 +31,10 @@ export const Modal = ({showModal, setShowModal}) => {
     transform: showModal ? `translateY(0%)` : `translateY(-100%)`,
   });
 
-  const closeModal = (event) => {
-    setShowModal(false);
+  const closeModal = event => {
+    if (modalRef.current === event.target) {
+      setShowModal(false);
+    }
   };
 
   const keyPress = useCallback(
@@ -47,9 +60,10 @@ export const Modal = ({showModal, setShowModal}) => {
               <ModalImg src={"/pizza.jpeg"} alt="modal picture" />
             </ModalImgContainer>
             <ModalContent>
-              <h1>Are you ready?</h1>
-              <p>Get exclusive access to our next launch.</p>
-              <button>Join Now</button>
+              <ModalContentWrapper>
+                <ModalTitle>{title}</ModalTitle>
+                {content}
+              </ModalContentWrapper>
             </ModalContent>
             <CloseModalButton
               aria-label="Close modal"

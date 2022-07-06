@@ -3,7 +3,7 @@ import {colors} from "../../consts/colors";
 
 const HeaderContainer = styled.header`
   display: flex;
-  background-color: ${colors.primary_color};
+  background-color: ${colors.primary};
   width: 100vw;
   height: 64px;
   padding: 12px 30px 12px 30px;

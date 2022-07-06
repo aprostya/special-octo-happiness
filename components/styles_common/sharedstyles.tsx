@@ -7,11 +7,10 @@ const Container = styled.div`
 const Main = styled.main`
 `
 
-const Title = styled.h1`
+const MainTitle = styled.h1`
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
-  text-align: center;
+  font-size: 40px;
   text-decoration: none;
 
   a {
@@ -39,4 +38,4 @@ const CodeTag = styled.code`
   font-family: Roboto;
 `
 
-export { Container, Main, Title, Description, CodeTag }
+export { Container, Main, MainTitle as Title, Description, CodeTag }

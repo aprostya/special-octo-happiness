@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import CloseIcon from '@mui/icons-material/Close';
+import {Title} from "../../styles_common/sharedstyles";
 
 const Background = styled.div`
   width: 100%;
@@ -15,17 +16,14 @@ const Background = styled.div`
 `;
 
 const ModalWrapper = styled.div`
+  display: flex;
+  position: relative;
+  border-radius: 10px;
   width: 715px;
   height: 600px;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
   background: #fff;
   color: #000;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  position: relative;
-  z-index: 10;
-  border-radius: 10px;
-  position: relative;
 `;
 
 const ModalImg = styled.img`
@@ -43,20 +41,21 @@ const ModalImgContainer = styled.div`
 const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   line-height: 1.8;
   color: #141414;
   p {
     margin-bottom: 1rem;
   }
-  button {
-    padding: 10px 24px;
-    background: #141414;
-    color: #fff;
-    border: none;
-  }
 `;
+
+const ModalContentWrapper = styled.div`
+    margin-top: 125px;
+    padding: 0 50px;
+`
+
+const ModalTitle = styled(Title)`
+    margin-bottom: 44px;
+`
 
 const CloseModalButton = styled(CloseIcon)`
   cursor: pointer;
@@ -69,4 +68,4 @@ const CloseModalButton = styled(CloseIcon)`
   z-index: 10;
 `;
 
-export {Background, ModalWrapper, ModalImgContainer, ModalContent, ModalImg, CloseModalButton};
+export {Background, ModalWrapper, ModalTitle, ModalImgContainer, ModalContent, ModalContentWrapper, ModalImg, CloseModalButton};
